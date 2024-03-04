@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%block content%}
+
+<div class="col-md-6 offset-md-3"> 
+    <br/>
+    <br/>
+
+    {%if user.is_authenticated%}
+
+    reeoe
+    {%else%}
+    <h1>Login</h1>
+    <br/>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+            <input type="text" class="form-control" name="username" placeholder="Username" required/>
+
+          </div>
+        
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" name="password" placeholder="Password" class="form-control" required/>
+
+          </div>
+        
+          <!-- 2 column grid layout for inline styling -->
+        
+          <!-- Submit button -->
+          <button type="Submit" class="btn btn-secondary  btn-block mb-4">Login</button>
+        
+          <!-- Register buttons -->
+          
+    </form>
+
+</div>
+{%endif%}
+{%endblock%}
